@@ -8,6 +8,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
+	const Title = ({ title }) => {
+		return (
+			<h1 className="font-bold text-3xl text-center uppercase mb-20">
+				{title}
+			</h1>
+		);
+	};
 	const Navbar = () => {
 		return (
 			<>
@@ -35,7 +42,22 @@ const Home = () => {
 			</>
 		);
 	};
-	const Card = ({ image }) => {
+	const Hero = () => {
+		return (
+			<div className="bg-secondary md:m-10 py-10 md:px-14 px-5">
+				<p className="md:text-5xl text-3xl font-bold md:text-right text-center mb-5 md:mb-0">
+					Beauee
+				</p>
+				<div className="grid md:grid-cols-2 items-center gap-x-8 gap-y-5">
+					<img src="/assets/pic-left.png" alt="Hero" className="w-full" />
+					<div>
+						<img src="/assets/pic-right.png" alt="Hero" className="w-full" />
+					</div>
+				</div>
+			</div>
+		);
+	};
+	const CardCategory = ({ image }) => {
 		return (
 			<div className="bg-primary w-64 flex flex-col items-center py-10 my-10 md:my-5">
 				<img
@@ -59,13 +81,68 @@ const Home = () => {
 	const Categories = () => {
 		return (
 			<div className="my-5">
-				<p className="font-bold text-3xl text-center uppercase mb-20">
-					Categories
-				</p>
+				<Title title={"Categories"} />
 				<div className="flex md:flex-row flex-col gap-x-10 items-center justify-evenly">
-					<Card image={"Face"} />
-					<Card image={"Body"} />
-					<Card image={"Hair"} />
+					<CardCategory image={"Face"} />
+					<CardCategory image={"Body"} />
+					<CardCategory image={"Hair"} />
+				</div>
+			</div>
+		);
+	};
+	const Product = () => {
+		return (
+			<>
+				<Title title={"Our Product"} />
+				<div className="grid md:grid-cols-2 px-14 gap-x-10 gap-y-5">
+					<img src="/assets/product-pic.png" alt="Our Product" />
+					<div className="flex items-center flex-col text-center justify-center gap-y-3">
+						<p className="font-bold text-xl">
+							Elevate Your Beauty Ritual with Beauee
+						</p>
+						<p className="italic">
+							where beauty meets innovation. Our carefully curated collection of
+							beauty products is designed to transform your everyday routine
+							into a luxurious and rejuvenating experience. Explore a world of
+							premium skincare, makeup, and wellness items crafted with a
+							perfect blend of science and nature.
+						</p>
+					</div>
+				</div>
+			</>
+		);
+	};
+	const ArticleCard = () => {
+		return (
+			<div className="grid md:grid-cols-9 gap-x-5 px-5 border border-black py-3">
+				<img
+					src="/assets/article-img.png"
+					alt=""
+					className="w-full col-span-5"
+				/>
+				<div className="col-span-4 my-3">
+					<p className="font-bold text-3xl">Headline</p>
+					<p className="my-3">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
+						dolorum quibusdam beatae neque. Asperiores, nihil autem repellendus
+						quaerat dolore mollitia.
+					</p>
+					<button className="my-5 rounded-full border border-black shadow-lg px-5 py-1 font-bold text-[#373737]">
+						More Info &gt;&gt;
+					</button>
+				</div>
+			</div>
+		);
+	};
+	const Article = () => {
+		return (
+			<div className="my-20">
+				<Title title={"Our Articles"} />
+				<div className="grid md:grid-cols-2 px-14 gap-10">
+					<ArticleCard />
+					<ArticleCard />
+					<ArticleCard />
+					<ArticleCard />
 				</div>
 			</div>
 		);
@@ -124,18 +201,10 @@ const Home = () => {
 	return (
 		<>
 			<Navbar />
-			<div className="bg-secondary m-10 py-10 md:px-14 px-5">
-				<p className="md:text-5xl text-3xl font-bold md:text-right text-center mb-5 md:mb-0">
-					Beauee
-				</p>
-				<div className="grid md:grid-cols-2 items-center gap-x-8 gap-y-5">
-					<img src="/assets/pic-left.png" alt="Hero" className="w-full" />
-					<div>
-						<img src="/assets/pic-right.png" alt="Hero" className="w-full" />
-					</div>
-				</div>
-			</div>
+			<Hero />
 			<Categories />
+			<Product />
+			<Article />
 			<Footer />
 		</>
 	);
