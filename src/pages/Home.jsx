@@ -66,7 +66,7 @@ const Home = () => {
 					className="w-[150px] -my-20"
 				/>
 				<div className="flex flex-col px-5 items-center gap-y-3 mt-24">
-					<p className="font-bold text-2xl">Face</p>
+					<p className="font-bold text-2xl">{image}</p>
 					<p className="text-xs text-center">
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
 						reiciendis sit quod asperiores maiores atque?
