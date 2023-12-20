@@ -147,6 +147,108 @@ const Home = () => {
 			</div>
 		);
 	};
+	const CardProduct = ({ image, name, price }) => {
+		return (
+			<div className="flex flex-col w-72 items-center md:items-start">
+				<img src={`/assets/${image}.png`} className="w-[250px]" />
+				<div className="flex flex-col justify-center mt-3">
+					<p className="font-medium text-xl">{name}</p>
+					<p className="font-bold text-xl mt-1">{price}</p>
+					<button className="bg-gray-300 hover:bg-gray-400 md:w-full  text-black uppercase py-2 px-3 rounded-md mt-5  font-semibold">
+						Add to Cart
+					</button>
+				</div>
+			</div>
+		);
+	};
+
+	const BestProduct = () => {
+		return (
+			<div>
+				<Title title={"Best Seller Product"} />
+				<div className="flex justify-center md:flex-row items-center flex-col gap-x-10 gap-y-7">
+					<CardProduct
+						image={"lip-cream"}
+						name={"Beauee Lip Cream"}
+						price={"Rp. 50.000"}
+					/>
+					<CardProduct
+						image={"face-wash"}
+						name={"Beauee Facewash"}
+						price={"Rp. 60.000"}
+					/>
+					<CardProduct
+						image={"serum"}
+						name={"Beauee Serum"}
+						price={"Rp. 90.000"}
+					/>
+				</div>
+			</div>
+		);
+	};
+
+	const Promo = () => {
+		return (
+			<div className="mt-20">
+				<Title title={"Best Beauty Deals"} />
+				<img
+					src="/assets/hero-promo.png"
+					alt=""
+					className="md:w-7/12 px-5 mx-auto"
+				/>
+				<div className="flex justify-center flex-col md:flex-row gap-y-5 items-center gap-x-10 mt-10">
+					<div className="rounded-lg">
+						<img src="/assets/bedak.png" className="w-[200px]" alt="" />
+						<div className="bg-[#8D8D8D] px-3 py-2 rounded-b-lg">
+							<p className="text-center text-white text-lg font-medium">
+								Beauee Cushion
+							</p>
+							<p className="bg-[#D9D9D9] text-center py-4 px-5 mx-1 font-medium">
+								Rp. 100.000
+							</p>
+						</div>
+					</div>
+					<div className="rounded-lg">
+						<img src="/assets/bedak.png" className="w-[200px]" alt="" />
+						<div className="bg-[#8D8D8D] px-3 py-2 rounded-b-lg">
+							<p className="text-center text-white text-lg font-medium">
+								Beauee Cushion
+							</p>
+							<p className="bg-[#D9D9D9] text-center py-4 px-5 mx-1 font-medium">
+								Rp. 100.000
+							</p>
+						</div>
+					</div>
+					<div className="rounded-lg">
+						<img src="/assets/bedak.png" className="w-[200px]" alt="" />
+						<div className="bg-[#8D8D8D] px-3 py-2 rounded-b-lg">
+							<p className="text-center text-white text-lg font-medium">
+								Beauee Cushion
+							</p>
+							<p className="bg-[#D9D9D9] text-center py-4 px-5 mx-1 font-medium">
+								Rp. 100.000
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	};
+	const About = () => {
+		return (
+			<div className="my-20">
+				<Title title={"Tentang Kami"} />
+				<img src="/assets/about.png" alt="" className="w-8/12 mx-auto" />
+				<p className="md:px-48 px-9 text-lg mt-8 text-justify">
+					Welcome to Beauee, where beauty meets innovation. Our carefully
+					curated collection of beauty products is designed to transform your
+					everyday routine into a luxurious and rejuvenating experience. Explore
+					a world of premium skincare, makeup, and wellness items crafted with a
+					perfect blend of science and nature.
+				</p>
+			</div>
+		);
+	};
 	const Footer = () => {
 		return (
 			<div className="px-14 py-8">
@@ -205,6 +307,9 @@ const Home = () => {
 			<Categories />
 			<Product />
 			<Article />
+			<BestProduct />
+			<Promo />
+			<About />
 			<Footer />
 		</>
 	);
